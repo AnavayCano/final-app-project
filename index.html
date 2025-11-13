@@ -9,8 +9,8 @@
 </head>
 <body>
   <header class="site-header">
-    <h1>Pomodoro</h1>
-    <p class="tagline">Focused study with gentle breaks</p>
+    <label for="task-name" class="muted label">Task name</label>
+    <input id="task-name" class="task-input" type="text" placeholder="What are you working on?" />
   </header>
 
   <main class="app-container">
@@ -45,8 +45,7 @@
         <h2 id="pomodoro-heading">Pomodoro Timer</h2>
       </div>
 
-      <label for="task-name" class="muted label">Task name</label>
-      <input id="task-name" class="task-input" type="text" placeholder="What are you working on?" />
+      
 
       <div class="timer-display" role="timer" aria-live="polite">
         <div id="time" class="time">25:00</div>

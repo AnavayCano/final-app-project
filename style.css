@@ -24,7 +24,7 @@ html,body{
 
 .site-header{
   max-width:var(--max-width);
-  margin:28px auto 8px;
+  margin:28px auto 0px;
   padding:0 20px;
 }
 .site-header h1{
@@ -42,7 +42,7 @@ html,body{
 /* Layout */
 .app-container{
   max-width:var(--max-width);
-  margin:18px auto;
+  margin:0px auto;
   padding:20px;
   display:grid;
   grid-template-columns: 1fr 360px;
@@ -57,7 +57,7 @@ html,body{
 .flashcards, .pomodoro{
   background:var(--panel);
   border-radius:var(--radius);
-  padding:18px;
+  padding: 18px;
   box-shadow: 0 6px 18px var(--shadow);
   min-height: 260px;
 }
