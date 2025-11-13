@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <title>My Final Project App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <title>Pomodoro Study Technique</title>
 </head>
 <body>
-    <h1>App Project</h1>
+  <header class="site-header">
+    <h1>Pomodoro</h1>
+    <p class="tagline">Focused study with gentle breaks</p>
+  </header>
+
+  <main class="app-container">
+    <section class="flashcards" aria-labelledby="flashcards-heading">
+      <div class="section-header">
+        <h2 id="flashcards-heading">Flashcards</h2>
+        <div class="card-meta">
+          <span id="card-number">1</span>
+          <span class="muted">/</span>
+          <span id="card-total">12</span>
+        </div>
+      </div>
+
+      <div class="card-view" id="card-view" tabindex="0" aria-live="polite">
+        <div class="card-front">
+          <div class="card-content">
+            <h3 id="card-title">Card title</h3>
+            <p id="card-body">This is where your flashcard content will appear.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-controls">
+        <button id="prev-card" class="btn ghost">Previous</button>
+        <button id="flip-card" class="btn">Flip</button>
+        <button id="next-card" class="btn ghost">Next</button>
+      </div>
+    </section>
+
+    <aside class="pomodoro" aria-labelledby="pomodoro-heading">
+      <div class="section-header">
+        <h2 id="pomodoro-heading">Pomodoro Timer</h2>
+      </div>
+
+      <label for="task-name" class="muted label">Task name</label>
+      <input id="task-name" class="task-input" type="text" placeholder="What are you working on?" />
+
+      <div class="timer-display" role="timer" aria-live="polite">
+        <div id="time" class="time">25:00</div>
+        <div class="mode-label">
+          <span id="mode">Work</span>
+        </div>
+      </div>
+
+      <div class="timer-controls">
+        <button id="start" class="btn primary">Start</button>
+        <button id="pause" class="btn" disabled>Pause</button>
+        <button id="reset" class="btn ghost">Reset</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label muted">Breaks taken</div>
+          <div id="break-count" class="stat-value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label muted">Cards studied</div>
+          <div id="cards-studied" class="stat-value">0</div>
+        </div>
+      </div>
+
+      <div class="shortcuts muted small">
+        <span>Short break: 5m</span> • <span>Long break: 15m</span>
+      </div>
+
+      <div class="character-box" aria-hidden="false">
+        <div class="character">
+          <img src="" alt="" id="char-avatar" class="avatar" />
+        </div>
+        <div class="speech">
+          <p id="char-speech">Nice focus — time for a short break soon!</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small class="muted">Tip: Use the arrow keys to navigate flashcards.</small>
+  </footer>
 </body>
 </html>
