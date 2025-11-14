@@ -17,6 +17,7 @@
     <section class="flashcards" aria-labelledby="flashcards-heading">
       <div class="section-header">
         <h2 id="flashcards-heading">Flashcards</h2>
+        <button id="create-card" class="btn ghost">Create Flashcards</button>
         <div class="card-meta">
           <span id="card-number">1</span>
           <span class="muted">/</span>
@@ -27,7 +28,6 @@
       <div class="card-view" id="card-view" tabindex="0" aria-live="polite">
         <div class="card-front">
           <div class="card-content">
-            <h3 id="card-title">Card title</h3>
             <p id="card-body">This is where your flashcard content will appear.</p>
           </div>
         </div>
@@ -65,14 +65,10 @@
           <div class="stat-label muted">Breaks taken</div>
           <div id="break-count" class="stat-value">0</div>
         </div>
-        <div class="stat">
-          <div class="stat-label muted">Cards studied</div>
-          <div id="cards-studied" class="stat-value">0</div>
-        </div>
       </div>
 
       <div class="shortcuts muted small">
-        <span>Short break: 5m</span> • <span>Long break: 15m</span>
+        <span>Short break: 5m</span> • <span>Long break: 30m</span>
       </div>
 
       <div class="character-box" aria-hidden="false">
@@ -85,9 +81,5 @@
       </div>
     </aside>
   </main>
-
-  <footer class="site-footer">
-    <small class="muted">Tip: Use the arrow keys to navigate flashcards.</small>
-  </footer>
 </body>
 </html>
