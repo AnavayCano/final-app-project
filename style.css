@@ -1,7 +1,7 @@
 :root{
   --bg: #f6fbfb;
   --panel: #ffffff;
-  --muted: #7b8a8a;
+  --muted: #102022;
   --accent: #7aa9a1;
   --accent-2: #9fb7b0;
   --shadow: rgba(24,39,40,0.06);
@@ -16,7 +16,7 @@ html,body{
   height:100%;
   margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(rgba(255, 255, 255, 0.799), #6c6c6c);
+  background: linear-gradient(rgba(200, 200, 200, 0.799), #757575);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -108,16 +108,15 @@ html,body{
 /* Pomodoro area */
 .label{ 
   font-size: 22px;
-  margin-right:10px;
+  margin-right:5px;
 } /* task name*/
 
 .task-input{
-  width:60%;
+  width:41%;
   padding:10px 12px;
   border-radius:10px;
   border:1px solid rgba(16,32,34,0.06);
   margin-bottom:0px;
-  margin-left: 10px;
   font-size:15px;
   background:linear-gradient(180deg,#eaeaea,#fbffff);
 }
@@ -187,3 +186,18 @@ html,body{
 /* Utility */
 .muted{ color:var(--muted); }
 .small{ font-size:0.85rem; }
+
+.task-btn {
+  background:transparent; 
+  border:1px solid rgba(16,32,34,0.06);
+  height:35px;
+  width:9%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(16,32,34,0.06);
+  background:linear-gradient(180deg,#eaeaea,#fbffff);
+}
+
+.task-btn:hover{ 
+  transform: translateY(-1px); 
+}

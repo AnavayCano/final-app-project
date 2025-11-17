@@ -9,8 +9,9 @@
 </head>
 <body>
   <header class="site-header">
-    <label for="task-name" class="muted label">Task name</label>
-    <input id="task-name" class="task-input" type="text" placeholder="What are you working on?" />
+    <label for="task-prompt" class="muted label" id="task-title">Task name</label>
+    <input id="task-prompt" class="task-input" type="text" placeholder="What are you working on?" />
+    <button id="addTaskName" class="task-btn" onclick="addTaskName()">+</button>
   </header>
 
   <main class="app-container">
@@ -50,7 +51,7 @@
       <div class="timer-display" role="timer" aria-live="polite">
         <div id="time" class="time">25:00</div>
         <div class="mode-label">
-          <span id="mode">Work</span>
+          <span id="mode">Study</span>
         </div>
       </div>
 
