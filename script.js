@@ -5,6 +5,8 @@ function addTaskName(){
     let taskInput = document.getElementById("task-prompt");
     // Get input value
     let task = taskInput.value;
+    // Clear text box
+    taskInput.value = "";
     // Get task title element
     let taskTitle = document.getElementById("task-title");
     console.log(taskTitle);

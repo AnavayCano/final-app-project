@@ -75,7 +75,7 @@ html,body{
 /* Card view */
 .card-view{
   border-radius:12px;
-  background: linear-gradient(180deg, #80bfae, #54b494);
+  background: linear-gradient(180deg, #80bfaed1, #54b494bb);
   min-height:160px;
   display:flex;
   align-items:center;
@@ -108,8 +108,12 @@ html,body{
 /* Pomodoro area */
 .label{ 
   font-size: 22px;
-  margin-right:5px;
 } /* task name*/
+
+#task-title {
+  width: clamp(20px, 23px, 30px);
+  font-size: 20px;
+}
 
 .task-input{
   width:41%;
@@ -117,7 +121,7 @@ html,body{
   border-radius:10px;
   border:1px solid rgba(16,32,34,0.06);
   margin-bottom:0px;
-  font-size:15px;
+  font-size:12px;
   background:linear-gradient(180deg,#eaeaea,#fbffff);
 }
 
