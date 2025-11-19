@@ -62,7 +62,7 @@ html,body{
   min-height: 260px;
 }
 
-/* Section headers */
+/* Section header */
 .section-header{
   display:flex;
   align-items:center;
@@ -75,7 +75,7 @@ html,body{
 /* Card view */
 .card-view{
   border-radius:12px;
-  background: linear-gradient(180deg, #80bfaed1, #54b494bb);
+  background: linear-gradient(90deg, #81d3c7, #7aa9a1);
   min-height:160px;
   display:flex;
   align-items:center;
@@ -116,7 +116,7 @@ html,body{
 }
 
 .task-input{
-  width:41%;
+  width:47%;
   padding:10px 12px;
   border-radius:10px;
   border:1px solid rgba(16,32,34,0.06);
@@ -204,4 +204,18 @@ html,body{
 
 .task-btn:hover{ 
   transform: translateY(-1px); 
+}
+
+/* End Session Button */
+#end-button {
+  border:0;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  background: rgb(194, 77, 77);
+  color:var(--text);
+  font-weight:600;
+  transition: all .12s ease;
+  box-shadow:none;
+  width: 100%;
 }
