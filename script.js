@@ -1,5 +1,6 @@
 console.log("Script started");
 
+// task name title
 function addTaskName(){
     // Get task input
     let taskInput = document.getElementById("task-prompt");
@@ -12,4 +13,23 @@ function addTaskName(){
     console.log(taskTitle);
     // Get inner text
     taskTitle.innerText = task;
+}
+
+// flashcard buttons
+function createFlashcards() {
+
+}
+
+// timer
+let timerInterval;
+let startSeconds = 25*60;
+
+function startTimer(startSeconds) {
+    console.log("timer started");
+
+    // Left off here
+}
+
+function changeDisplay() {
+
 }

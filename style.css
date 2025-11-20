@@ -75,7 +75,7 @@ html,body{
 /* Card view */
 .card-view{
   border-radius:12px;
-  background: linear-gradient(90deg, #81d3c7, #7aa9a1);
+  background: linear-gradient(90deg, #63b8ac, #7aa9a1);
   min-height:160px;
   display:flex;
   align-items:center;
