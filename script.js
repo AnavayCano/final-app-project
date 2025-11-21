@@ -21,13 +21,26 @@ function createFlashcards() {
 }
 
 // timer
-let timerInterval;
 let startSeconds = 25*60;
 
 function startTimer(startSeconds) {
     console.log("timer started");
 
-    // Left off here
+    // Get timer display
+    let timerDisplay = document.getElementById("time");
+    console.log(timerDisplay);
+    
+}
+
+function countdown() {
+    startSeconds--;
+
+    let sessionsCompleted = [];
+    let breakCount = document.getElementById("break-count");
+    if(startSeconds == 0) {
+        sessionsCompleted++;
+        breakCount.innerHTML = sessionsCompleted;
+    }
 }
 
 function changeDisplay() {
