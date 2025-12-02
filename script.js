@@ -1,9 +1,11 @@
 console.log("Script started");
 
+// Global variables
 let taskNames = [];
 let sessionsCompleted = [];
 let isPaused = false;
 let isReset = false;
+let clickCount = 0;
 
 // task name title
 function addTaskName(){
@@ -36,12 +38,14 @@ function startTimer() {
 
     // Check if pause button was clicked
     if(isPaused){
-        return;
+       return; 
     }
 
     // Check if reset button was clicked
     if(isReset) {
+        clearInterval(timer);
         resetTimer();
+        return;
     }
 
     // Minus one every second or countdown
@@ -87,17 +91,41 @@ let resetButton = document.getElementById("reset");
 function pauseTimer() {
     console.log("timer paused");
 
+    clickCount++;
+
     isPaused = true;
     pauseButton.innerHTML = "Unpause";
 
     // Check if button is clicked again
+    if(clickCount == 2) {
+        pauseButton.innerHTML = "Pause"
 
+        // Keep current count of seconds
+        let curr = startSeconds;
 
-    // Continue timer
+        // Continue timer
+        startSeconds = curr;
+        // Minus one every second or countdown
+    //     setInterval(function() { 
+    //         startSeconds--;
 
-    // Keep current count of seconds
-    let curr = startSeconds;
-    
+    //         // Convert seconds to MM:SS format
+    //         let minutes = Math.floor(startSeconds/60);
+
+    //         let seconds = startSeconds % 60;
+
+            
+    //         // Get timer display
+    //         let timerDisplay = document.getElementById("time");
+
+    //         // Update timer display
+    //         timerDisplay.innerHTML = minutes + ":" + seconds;
+
+    //         if(seconds <= 9) {
+    //             timerDisplay.innerHTML = minutes + ":0" + seconds;
+    //         }
+    // }, 1000)
+
 }
 
 
@@ -105,7 +133,22 @@ function resetTimer() {
     console.log("timer reset");
 
     isReset = true;
-    // Clear timer interval
-    
-    // Call start timer function
+    // Set seconds to 1500
+    startSeconds = 25*60;
+
+    // Convert seconds to MM:SS format
+    let minutes = Math.floor(startSeconds/60);
+
+    let seconds = startSeconds % 60;
+
+    // Get timer display
+    let timerDisplay = document.getElementById("time");
+
+    // Update timer display
+    timerDisplay.innerHTML = minutes + ":" + seconds;
+
+    if(seconds <= 9) {
+        timerDisplay.innerHTML = minutes + ":0" + seconds;
+    }
+
 }
