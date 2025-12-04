@@ -8,7 +8,7 @@ let isReset = false;
 let clickCount = 0;
 
 // task name title
-function addTaskName(){
+function addTaskName() {
     // Get task input
     let taskInput = document.getElementById("task-prompt");
     // Get input value
@@ -30,57 +30,59 @@ function createFlashcards() {
 }
 
 // timer
-let startSeconds = 25*60;
+let startSeconds = 25 * 60;
 
 function startTimer() {
-    let timer = setInterval(function() {
-    console.log("timer started");
 
-    // Check if pause button was clicked
-    if(isPaused){
-       return; 
-    }
-
-    // Check if reset button was clicked
-    if(isReset) {
-        clearInterval(timer);
-        resetTimer();
-        return;
-    }
-
-    // Minus one every second or countdown
-    startSeconds--;
-
-    // Convert seconds to MM:SS format
-    let minutes = Math.floor(startSeconds/60);
-
-    let seconds = startSeconds % 60;
-
-    
-    // Get timer display
-    let timerDisplay = document.getElementById("time");
-
-    // Update timer display
-    timerDisplay.innerHTML = minutes + ":" + seconds;
-
-    if(seconds <= 9) {
-        timerDisplay.innerHTML = minutes + ":0" + seconds;
-    }
-
-    // Keep count of breaks and update display
-    countBreaks();
+    let timer = setInterval(function () {
+        console.log("timer started");
 
 
-}, 1000)
+        // Check if pause button was clicked
+        if (isPaused) {
+            return;
+        }
+
+        // Check if reset button was clicked
+        if (isReset) {
+            clearInterval(timer);
+            resetTimer();
+            return;
+        }
+
+        // Minus one every second or countdown
+        startSeconds--;
+
+        // Convert seconds to MM:SS format
+        let minutes = Math.floor(startSeconds / 60);
+
+        let seconds = startSeconds % 60;
+
+
+        // Get timer display
+        let timerDisplay = document.getElementById("time");
+
+        // Update timer display
+        timerDisplay.innerHTML = minutes + ":" + seconds;
+
+        if (seconds <= 9) {
+            timerDisplay.innerHTML = minutes + ":0" + seconds;
+        }
+
+        // Keep count of breaks and update display
+        countBreaks();
+
+
+    }, 1000)
 }
 
 // Keeps count of breaks
 function countBreaks() {
     let sessionsCompleted = 0;
     let breakCount = document.getElementById("break-count").innerHTML;
-    if(startSeconds == 0) {
+    if (startSeconds == 0) {
         sessionsCompleted++;
-        breakCount= sessionsCompleted;
+        breakCount = sessionsCompleted;
     }
 }
 
@@ -97,47 +99,22 @@ function pauseTimer() {
     pauseButton.innerHTML = "Unpause";
 
     // Check if button is clicked again
-    if(clickCount == 2) {
+    if (clickCount == 2) {
         pauseButton.innerHTML = "Pause"
-
-        // Keep current count of seconds
-        let curr = startSeconds;
-
-        // Continue timer
-        startSeconds = curr;
-        // Minus one every second or countdown
-    //     setInterval(function() { 
-    //         startSeconds--;
-
-    //         // Convert seconds to MM:SS format
-    //         let minutes = Math.floor(startSeconds/60);
-
-    //         let seconds = startSeconds % 60;
-
-            
-    //         // Get timer display
-    //         let timerDisplay = document.getElementById("time");
-
-    //         // Update timer display
-    //         timerDisplay.innerHTML = minutes + ":" + seconds;
-
-    //         if(seconds <= 9) {
-    //             timerDisplay.innerHTML = minutes + ":0" + seconds;
-    //         }
-    // }, 1000)
-
+        isPaused = false;
+        clickCount = 0;
+    }
 }
-
 
 function resetTimer() {
     console.log("timer reset");
 
     isReset = true;
     // Set seconds to 1500
-    startSeconds = 25*60;
+    startSeconds = 25 * 60;
 
     // Convert seconds to MM:SS format
-    let minutes = Math.floor(startSeconds/60);
+    let minutes = Math.floor(startSeconds / 60);
 
     let seconds = startSeconds % 60;
 
@@ -147,8 +124,7 @@ function resetTimer() {
     // Update timer display
     timerDisplay.innerHTML = minutes + ":" + seconds;
 
-    if(seconds <= 9) {
+    if (seconds <= 9) {
         timerDisplay.innerHTML = minutes + ":0" + seconds;
     }
-
 }
