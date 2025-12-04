@@ -2,7 +2,8 @@ console.log("Script started");
 
 // Global variables
 let taskNames = [];
-let sessionsCompleted = [];
+let sessionsCompleted = 0;
+let breaksTaken = 0;
 let isPaused = false;
 let isReset = false;
 let clickCount = 0;
@@ -21,12 +22,11 @@ function addTaskName() {
     taskTitle.innerText = task;
     // Add task name to array
     taskNames.push(task);
-    console.log(taskNames);
 }
 
 // flashcard buttons
 function createFlashcards() {
-
+    
 }
 
 // timer
@@ -72,7 +72,6 @@ function startTimer() {
         // Keep count of breaks and update display
         countBreaks();
 
-
     }, 1000)
 }
 
@@ -81,9 +80,13 @@ function countBreaks() {
     let sessionsCompleted = 0;
     let breakCount = document.getElementById("break-count").innerHTML;
     if (startSeconds == 0) {
-        sessionsCompleted++;
-        breakCount = sessionsCompleted;
+        breaksTaken++;
+        breakCount = "breaksTaken";
     }
+}
+
+function startBreakTimer () {
+
 }
 
 // timer buttons
@@ -127,4 +130,10 @@ function resetTimer() {
     if (seconds <= 9) {
         timerDisplay.innerHTML = minutes + ":0" + seconds;
     }
+}
+
+function endSession() {
+    sessionsCompleted++;
+
+    console.log(sessionsCompleted);
 }
