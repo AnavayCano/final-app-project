@@ -30,11 +30,11 @@ function createFlashcards() {
 }
 
 // timer
-let startSeconds = 25 * 60;
+let startSeconds = 1 * 5;
 
 function startTimer() {
 
-    let timer = setInterval(function () {
+    let timer = setInterval(function () { //Ai suggested the use of set interval
         console.log("timer started");
 
 
@@ -77,16 +77,50 @@ function startTimer() {
 
 // Keeps count of breaks
 function countBreaks() {
-    let sessionsCompleted = 0;
     let breakCount = document.getElementById("break-count").innerHTML;
     if (startSeconds == 0) {
         breaksTaken++;
         breakCount = "breaksTaken";
+        startBreakTimer();
     }
 }
 
-function startBreakTimer () {
+function startBreakTimer (breakSeconds) {
+        // Create timer container
+        // let breakTimerContainer = document.createElement("div");
+        // breakTimerContainer.classList.add("stat")
 
+        // Create timer label
+        // let breakTimerLabel = document.createElement("div");
+        // breakTimerLabel.classList.add("stat-label muted");
+
+        // // Create timer
+        // let breakTimer = document.createElement("div");
+        // breakTimer.id = "break-timer"
+        // breakTimer.classList.add("stat-value");
+
+        // breakTimerContainer.appendChild(breakTimerLabel);
+        // breakTimerContainer.appendChild(breakTimer);
+
+
+        // Minus one every second or countdown
+        breakSeconds--;
+
+        // Convert seconds to MM:SS format
+        let displayMinutes = Math.floor(startSeconds / 60);
+
+        let displaySeconds = startSeconds % 60;
+
+
+        // Get timer display
+        let breakTimerDisplay = document.getElementById("break-timer");
+
+        // Update timer display
+        breakTimerDisplay.innerHTML = displayMinutes + ":" + displaySeconds;
+
+        if (breakSeconds <= 9) {
+            breakTimerDisplay.innerHTML = displayMinutes + ":0" + displaySeconds;
+        }
 }
 
 // timer buttons
