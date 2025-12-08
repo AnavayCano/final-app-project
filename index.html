@@ -61,10 +61,15 @@
         <button id="reset" class="btn ghost" onclick="resetTimer()">Reset</button>
       </div>
 
-      <div class="stats">
-        <div class="stat">
+      <div class="stats" id="break-timer-container">
+        <div class="stat" id="break-display">
           <div class="stat-label muted">Breaks taken</div>
           <div id="break-count" class="stat-value">0</div>
+        </div>
+
+        <div class="stat" id="break-display">
+          <div class="stat-label muted">Break timer</div>
+          <div id="break-timer" class="stat-value">5:00</div>
         </div>
       </div>
 

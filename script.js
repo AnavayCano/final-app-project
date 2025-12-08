@@ -70,57 +70,63 @@ function startTimer() {
         }
 
         // Keep count of breaks and update display
-        countBreaks();
+        countBreaks(timer);
 
     }, 1000)
 }
 
 // Keeps count of breaks
-function countBreaks() {
-    let breakCount = document.getElementById("break-count").innerHTML;
+function countBreaks(t) {
+    let breakCount = document.getElementById("break-count");
     if (startSeconds == 0) {
-        breaksTaken++;
-        breakCount = "breaksTaken";
-        startBreakTimer();
+
+        alert("Break time!! (click ok to start your break.)");
+        clearInterval(t)
+
+        startBreakTimer(5*1);
     }
 }
 
+
 function startBreakTimer (breakSeconds) {
-        // Create timer container
-        // let breakTimerContainer = document.createElement("div");
-        // breakTimerContainer.classList.add("stat")
+        pauseTimer();
 
-        // Create timer label
-        // let breakTimerLabel = document.createElement("div");
-        // breakTimerLabel.classList.add("stat-label muted");
+        let breakTimer = setInterval(function() {
+            if(breakSeconds == 0) {
+                clearInterval(breakTimer);
+                alert("Break Over!! (click ok to continue studying.)");
+                
+            let breakCount = document.getElementById("break-count");
 
-        // // Create timer
-        // let breakTimer = document.createElement("div");
-        // breakTimer.id = "break-timer"
-        // breakTimer.classList.add("stat-value");
+                // Add to break count
+                breaksTaken++;
+                breakCount.innerHTML = breaksTaken;
 
-        // breakTimerContainer.appendChild(breakTimerLabel);
-        // breakTimerContainer.appendChild(breakTimer);
+                // reset seconds
+                breakSeconds = 5*60;
 
+                // reset main timer seconds
+                startSeconds = 25*60;
+                isPaused = false;
+            }
 
-        // Minus one every second or countdown
-        breakSeconds--;
+            let breakTimerDisplay = document.getElementById("break-timer");
+        
+            // Minus one every second or countdown
+            breakSeconds--;
 
-        // Convert seconds to MM:SS format
-        let displayMinutes = Math.floor(startSeconds / 60);
+            // Convert seconds to MM:SS format
+            let displayMinutes = Math.floor(breakSeconds / 60);
 
-        let displaySeconds = startSeconds % 60;
+            let displaySeconds = breakSeconds % 60;
 
+            // Update timer display
+            breakTimerDisplay.innerHTML = displayMinutes + ":" + displaySeconds;
 
-        // Get timer display
-        let breakTimerDisplay = document.getElementById("break-timer");
-
-        // Update timer display
-        breakTimerDisplay.innerHTML = displayMinutes + ":" + displaySeconds;
-
-        if (breakSeconds <= 9) {
-            breakTimerDisplay.innerHTML = displayMinutes + ":0" + displaySeconds;
-        }
+            if (breakSeconds <= 9) {
+                breakTimerDisplay.innerHTML = displayMinutes + ":0" + displaySeconds;
+            }
+        }, 1000)
 }
 
 // timer buttons
