@@ -24,9 +24,43 @@ function addTaskName() {
     taskNames.push(task);
 }
 
-// flashcard buttons
-function createFlashcards() {
+
+let flashcardQuestions = [];
+let flashcardAnswers = [];
+// flashcards
+function getFlashcards() {
+    for(let i = 0; i < 12; i++) {
+
+    let cardQuestion = prompt("Enter your flashcard question.");
+    let cardAnswer = prompt("Enter your flashcard answer.");
+
+    flashcardQuestions.push(cardQuestion);
+    flashcardAnswers.push(cardAnswer);
+    }
+
+    console.log(flashcardQuestions);
+    console.log(flashcardAnswers);
+
+    displayFlashCards();
+}
+
+function displayFlashCards() {
+    let cardFrontContainer = document.getElementById("card-front-view");
+    let cardFront = document.getElementById("card-body");
+
     
+}
+
+function flipCard() {
+
+}
+
+function goToNextCard() {
+
+}
+
+function goToPreviousCard() {
+
 }
 
 // timer

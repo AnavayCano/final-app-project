@@ -18,7 +18,7 @@
     <section class="flashcards" aria-labelledby="flashcards-heading">
       <div class="section-header">
         <h2 id="flashcards-heading">Flashcards</h2>
-        <button id="create-card" class="btn ghost" onclick="createFlashcards()">Create Flashcards</button>
+        <button id="create-card" class="btn ghost" onclick="getFlashcards()">Create Flashcards</button>
         <div class="card-meta">
           <span id="card-number">1</span>
           <span class="muted">/</span>
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="card-view" id="card-view" tabindex="0" aria-live="polite">
+      <div class="card-view" id="card-front-view" tabindex="0" aria-live="polite">
         <div class="card-front">
           <div class="card-content">
             <p id="card-body">This is where your flashcard content will appear.</p>
@@ -35,9 +35,9 @@
       </div>
 
       <div class="card-controls">
-        <button id="prev-card" class="btn ghost">Previous</button>
-        <button id="flip-card" class="btn">Flip</button>
-        <button id="next-card" class="btn ghost">Next</button>
+        <button id="prev-card" class="btn ghost" onclick="goToPreviousCard()">Previous</button>
+        <button id="flip-card" class="btn" onclick="flipCard()">Flip</button>
+        <button id="next-card" class="btn ghost" onclick="goToNextCard()">Next</button>
       </div>
     </section>
 
@@ -74,7 +74,7 @@
       </div>
 
       <div class="shortcuts muted small">
-        <span>Short break: 5m</span> • <span>Long break: 30m</span>
+        <span>Short break: 5m</span> • <span>Long break: 15m-30m</span>
       </div>
 
       <div class="character-box" aria-hidden="false">
