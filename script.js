@@ -29,8 +29,7 @@ let flashcardQuestions = [];
 let flashcardAnswers = [];
 // flashcards
 function getFlashcards() {
-    for(let i = 0; i < 12; i++) {
-
+    for(let i = 0; i < 2; i++) {
     let cardQuestion = prompt("Enter your flashcard question.");
     let cardAnswer = prompt("Enter your flashcard answer.");
 
@@ -44,23 +43,51 @@ function getFlashcards() {
     displayFlashCards();
 }
 
+
+let cardFront = document.getElementById("card-body");
+let currQuestion = 0;
 function displayFlashCards() {
-    let cardFrontContainer = document.getElementById("card-front-view");
-    let cardFront = document.getElementById("card-body");
+    // let cardFront = document.getElementById("card-body");
+    cardFront.innerHTML = flashcardQuestions[currQuestion];
+
+    // Flip button
+    let flipButton = document.getElementById("flip-card");
+    flipButton.addEventListener("click", flipCard);
+
+    // Next button
+    let nextButton = document.getElementById("next-card");
+    nextButton.addEventListener("click", goToNextCard);
+
+    // Previous card button
+    let backButton = document.getElementById("prev-card");
+    backButton.addEventListener("click", goToPreviousCard);
+
 
     
 }
 
+let currAnswer = 0;
 function flipCard() {
+    console.log("card flipped");
+
+    let cardFrontContainer = document.getElementById("card-front-view");
+    cardFrontContainer.classList.toggle("flipped");
+
+    cardFront.innerHTML = flashcardAnswers[currAnswer];
+
 
 }
 
 function goToNextCard() {
-
+    currQuestion++;
+    displayFlashCards();
+    currAnswer++;
 }
 
 function goToPreviousCard() {
-
+    currQuestion--;
+    displayFlashCards();
+    currAnswer--;
 }
 
 // timer

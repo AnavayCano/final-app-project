@@ -1,4 +1,15 @@
-.card.flipped {
-    transform: rotateY(180deg);
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+/* Optional: Add a subtle bounce when flipping */
+.flipped {
+    animation: flip-bounce 0.8s ease-in-out;
+}
+
+@keyframes flip-bounce {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(190deg) scale(1.05); }
+    100% { transform: rotateY(180deg); }
 }
 
