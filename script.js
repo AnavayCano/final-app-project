@@ -76,7 +76,7 @@ function flipCard() {
     flipCount++;
 
     let cardFrontContainer = document.getElementById("card-front-view");
-    // cardFrontContainer.classList.toggle("flipped");
+    cardFrontContainer.classList.toggle("flipped");
 
     cardFront.innerHTML = flashcardAnswers[currAnswer];
 
@@ -85,6 +85,7 @@ function flipCard() {
     if(flipCount == 2) {
         cardFront.innerHTML = flashcardQuestions[currQuestion];
         console.log(cardFront.innerHTML);
+        cardFrontContainer.classList.toggle("flip-backwards");
         flipButton.innerHTML = "Flip";
         flipCount = 0;
     }
